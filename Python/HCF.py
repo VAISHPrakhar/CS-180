@@ -1,16 +1,13 @@
-# Program to calculate hcf of two numbers
+#program for calculating HCF of two numbers in a shorter way
+def calculate_hcf(num1, num2):
+    x = num1
+    y = num2
+    while(y):
+        x, y = y, x % y
+    return x
 
-def calculate_hcf(x, y):
-    if x > y:  
-        smaller = y  
-    else:  
-        smaller = x  
-    for i in range(1, smaller+1):  
-        if (x % i == 0) and (y % i == 0):  
-            hcf = i  
-    return hcf  
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
 
-num1 = int(input("Enter first number: "))  
-num2 = int(input("Enter second number: "))  
-
-print("The H.C.F. of", num1, "and", num2, "is", calculate_hcf(num1, num2))
+hcf = calculate_hcf(num1, num2)
+print(f"The HCF of {num1} and {num2} is {hcf}")
