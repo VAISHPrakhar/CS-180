@@ -1,18 +1,8 @@
-def lcm(x, y):
-   if x > y:
-       greater = x
-   else:
-       greater = y
+#calculating LCM of two numbers with user input
+import math
 
-   while(True):
-       if((greater % x == 0) and (greater % y == 0)):
-           lcm = greater
-           break
-       greater += 1
-
-   return lcm
-
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter another number: "))
-
-print("The L.C.M. is", lcm(num1, num2))
+def calculate_lcm_with_input():
+    x = int(input("Enter first number: "))
+    y = int(input("Enter second number: "))
+    lcm = (x * y) // math.gcd(x, y)
+    print(f"The LCM of {x} and {y} is {lcm}")
